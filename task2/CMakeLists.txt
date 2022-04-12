@@ -20,7 +20,7 @@ add_subdirectory(B)
 execute_process(COMMAND chmod +x preparing.py WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/A)
 execute_process(COMMAND python3 preparing.py WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/A)
 
-add_executable (C C/main.cpp)
+add_executable(C C/main.cpp)
 add_executable(CTest C/main_test.cpp)
 
 target_link_libraries(C B_library)
@@ -29,4 +29,4 @@ target_include_directories(C PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
 target_link_libraries(CTest B_library)
 target_include_directories(CTest PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
 
-target_link_libraries (CTest ${GTEST_LIBRARIES} Threads::Threads)
+target_link_libraries(CTest ${GTEST_LIBRARIES} Threads::Threads)
