@@ -24,9 +24,9 @@ add_executable(C C/main.cpp)
 add_executable(CTest C/main_test.cpp)
 
 target_link_libraries(C B_library)
-target_include_directories(C PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
+target_include_directories(C SHARED "${CMAKE_CURRENT_LIST_DIR}")
 
 target_link_libraries(CTest B_library)
-target_include_directories(CTest PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
+target_include_directories(CTest SHARED "${CMAKE_CURRENT_LIST_DIR}")
 
 target_link_libraries(CTest ${GTEST_LIBRARIES} Threads::Threads)
